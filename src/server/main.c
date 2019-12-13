@@ -22,6 +22,7 @@
  * SOFTWARE.
  */
 
+#include <nanvix/sys/noc.h>
 #include <nanvix/sys/perf.h>
 #include <nanvix/sys/thread.h>
 #include <nanvix/sys/mutex.h>
@@ -380,6 +381,9 @@ int __main2(int argc, const char *argv[])
 {
 	((void) argc);
 	((void) argv);
+
+	if (knode_get_num() != PROCESSOR_NODENUM_MASTER)
+		return (0);
 
 	uprintf(HLINE);
 

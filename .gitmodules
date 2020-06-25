@@ -4,5 +4,5 @@
 	branch = unstable
 [submodule "utils"]
 	path = utils
-	url = https://github.com/nanvix/utils.git
+	url = https://github.com/cevero/utils.git
 	branch = unstable

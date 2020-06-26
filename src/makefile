@@ -27,21 +27,21 @@
 #===============================================================================
 
 # Builds Binary Files
-all: all-apps all-buffer all-fork-join all-kcall-local all-kcall-remote all-noise \
-		all-perf all-server all-comm
+all: all-apps all-buffer all-fork-join all-kcall-local all-kcall-remote \
+		all-perf all-comm#  all-noise all-server
 
 # Cleans Object Files
 clean: clean-apps clean-buffer clean-fork-join clean-kcall-local clean-kcall-remote \
-		clean-noise clean-perf clean-server clean-comm
+		 clean-perf clean-comm #clean-noise clean-server
 
 # Cleans Everything
 distclean: distclean-apps distclean-buffer distclean-fork-join distclean-kcall-local \
-		distclean-kcall-remote distclean-noise distclean-perf \
-		distclean-server distclean-comm
+		distclean-kcall-remote distclean-perf \
+		 distclean-comm #distclean-server distclean-noise
 
 # Builds multibinary images
 image: image-apps image-buffer image-fork-join image-kcall-local image-kcall-remote \
-		image-noise image-perf image-server image-comm
+	 image-perf  image-comm	# image-noiseimage-server
 
 #===============================================================================
 # apps
@@ -147,22 +147,22 @@ image-kcall-remote:
 # noise
 #===============================================================================
 
-# Builds noise.
-all-noise:
-	@$(MAKE) -C noise all
-
-# Cleans object files.
-clean-noise:
-	@$(MAKE) -C noise clean
-
-# Cleans object files.
-distclean-noise:
-	@$(MAKE) -C noise distclean
-
-# Builds multibinary image.
-image-noise:
-	@$(MAKE) -C noise image
-
+## Builds noise.
+#all-noise:
+#	@$(MAKE) -C noise all
+#
+## Cleans object files.
+#clean-noise:
+#	@$(MAKE) -C noise clean
+#
+## Cleans object files.
+#distclean-noise:
+#	@$(MAKE) -C noise distclean
+#
+## Builds multibinary image.
+#image-noise:
+#	@$(MAKE) -C noise image
+#
 #===============================================================================
 # perf
 #===============================================================================
@@ -187,21 +187,21 @@ image-perf:
 # server
 #===============================================================================
 
-# Builds server.
-all-server:
-	@$(MAKE) -C server all
-
-# Cleans object files.
-clean-server:
-	@$(MAKE) -C server clean
-
-# Cleans object files.
-distclean-server:
-	@$(MAKE) -C server distclean
-
-# Builds multibinary image.
-image-server:
-	@$(MAKE) -C server image
+## Builds server.
+#all-server:
+#	@$(MAKE) -C server all
+#
+## Cleans object files.
+#clean-server:
+#	@$(MAKE) -C server clean
+#
+## Cleans object files.
+#distclean-server:
+#	@$(MAKE) -C server distclean
+#
+## Builds multibinary image.
+#image-server:
+#	@$(MAKE) -C server image
 
 #===============================================================================
 # upcall

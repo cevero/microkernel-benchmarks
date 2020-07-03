@@ -27,21 +27,40 @@
 #===============================================================================
 
 # Builds Binary Files
-all: all-apps all-buffer all-fork-join all-kcall-local all-kcall-remote all-noise \
-		all-perf all-server all-comm
+all: all-apps all-buffer all-fork-join all-kcall-local all-kcall-remote \
+		all-perf all-comm all-test-omp #all-server all-noise 
 
 # Cleans Object Files
 clean: clean-apps clean-buffer clean-fork-join clean-kcall-local clean-kcall-remote \
-		clean-noise clean-perf clean-server clean-comm
-
+		clean-comm clean-perf clean-test-omp #clean-noise  clean-server 
 # Cleans Everything
 distclean: distclean-apps distclean-buffer distclean-fork-join distclean-kcall-local \
-		distclean-kcall-remote distclean-noise distclean-perf \
-		distclean-server distclean-comm
+		distclean-kcall-remote distclean-perf distclean-comm distclean-test-omp\
+		#distclean-server distclean-noise 
 
 # Builds multibinary images
 image: image-apps image-buffer image-fork-join image-kcall-local image-kcall-remote \
-		image-noise image-perf image-server image-comm
+	   image-perf image-comm image-test-omp # image-server	image-noise
+
+#===============================================================================
+# apps
+#===============================================================================
+
+# Builds apps.
+all-test-omp:
+	@$(MAKE) -C test-omp all
+
+# Cleans object files.
+clean-test-omp:
+	@$(MAKE) -C test-omp clean
+
+# Cleans object files.
+distclean-test-omp:
+	@$(MAKE) -C test-omp distclean
+
+# Builds multibinary image.
+image-test-omp:
+	@$(MAKE) -C test-omp image
 
 #===============================================================================
 # apps

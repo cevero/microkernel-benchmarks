@@ -47,6 +47,7 @@ int __main2(int argc, const char *argv[])
 
 	uprintf("my test %d",NTHREADS);
 
+	uprintf("my test %d",NTHREADS);
 
 	return (0);
 }

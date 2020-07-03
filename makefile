@@ -104,7 +104,7 @@ export ARFLAGS = rc
 #
 # Default image
 #
-export IMAGE ?= kcall-local.img
+export IMAGE ?= test-omp.img
 
 # Builds everything.
 all: | make-dirs image

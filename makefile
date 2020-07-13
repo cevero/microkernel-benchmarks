@@ -81,7 +81,7 @@ include $(MAKEDIR)/makefile.microkernel-benchmarks
 #===============================================================================
 
 # Compiler Options
-export CFLAGS += -std=c99 -fno-builtin
+export CFLAGS += -std=c99 -fno-builtin -fopenmp
 export CFLAGS += -Wall -Wextra -Werror -Wa,--warn
 export CFLAGS += -Winit-self -Wswitch-default -Wfloat-equal
 export CFLAGS += -Wundef -Wshadow -Wuninitialized -Wlogical-op
@@ -107,7 +107,7 @@ export ARFLAGS = rc
 #
 # Default image
 #
-export IMAGE ?= test-omp.img
+export IMAGE ?= fork-join.img #test-omp.img
 
 # Builds everything.
 all: | make-dirs image

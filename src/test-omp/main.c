@@ -3,7 +3,9 @@
 #include <nanvix/ulib.h>
 #include <posix/stdint.h>
 #include <kbench.h>
+//#include <omp.h>
 
+#include "/home/reinaldo/workspace/microkernel-benchmarks/utils/toolchain/riscv32/gcc-9.1.0/libgomp/*"
 
 #define NTHREADS_MAX  (THREAD_MAX - 1) /**< Maximum Number of Working Threads      */
 /*============================================================================*
@@ -20,17 +22,19 @@ void *Hello_rei(void *teste);
 
 int __main2()
 {
-    int i,k;
+//    int i,k;
 //    int id_thread[NTHREADS_MAX];
 
-    kthread_t tid[NTHREADS_MAX];
+ //   kthread_t tid[NTHREADS_MAX];
 
-    for(i=0; i<NTHREADS_MAX;i++) {
-        kthread_create(&tid[i], Hello_rei, ((void*)( (intptr_t) i)));
-    }
-    for(k = 0; k < NTHREADS_MAX; k++){
-        kthread_join(tid[k], NULL);
-    }
+#pragma omp parallel
+    uprintf("Hello from thread %d\n",1);
+//    for(i=0; i<NTHREADS_MAX;i++) {
+//        kthread_create(&tid[i], Hello_rei, ((void*)( (intptr_t) i)));
+//    }
+//    for(k = 0; k < NTHREADS_MAX; k++){
+//        kthread_join(tid[k], NULL);
+//    }
 
 	return (0);
 }

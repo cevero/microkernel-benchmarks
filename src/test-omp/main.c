@@ -5,7 +5,6 @@
 #include <kbench.h>
 //#include <omp.h>
 
-#include "/home/reinaldo/workspace/microkernel-benchmarks/utils/toolchain/riscv32/gcc-9.1.0/libgomp/*"
 
 #define NTHREADS_MAX  (THREAD_MAX - 1) /**< Maximum Number of Working Threads      */
 /*============================================================================*

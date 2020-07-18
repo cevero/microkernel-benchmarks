@@ -3,7 +3,7 @@
 #include <nanvix/ulib.h>
 #include <posix/stdint.h>
 #include <kbench.h>
-//#include <omp.h>
+#include <omp.h>
 
 
 #define NTHREADS_MAX  (THREAD_MAX - 1) /**< Maximum Number of Working Threads      */
@@ -26,7 +26,7 @@ int __main2()
 
  //   kthread_t tid[NTHREADS_MAX];
 
-//#pragma omp parallel
+#pragma omp parallel
     uprintf("Hello from thread %d\n",1);
 //    for(i=0; i<NTHREADS_MAX;i++) {
 //        kthread_create(&tid[i], Hello_rei, ((void*)( (intptr_t) i)));

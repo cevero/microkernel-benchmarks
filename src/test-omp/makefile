@@ -44,7 +44,7 @@ LIBS += $(LIBDIR)/$(LIBLWIP)
 endif
 LIBS += $(LIBDIR)/$(BARELIB) $(THEIR_LIBS)
 #LIBS+=$(WORKDIR)/utils/toolchain/riscv32/gcc-9.1.0/libgomp/build/.libs/libgomp.a
-LIBS+=libgomp.a
+#LIBS+=libgomp.a
 
 #===============================================================================
 # Sources, Objects and Binary

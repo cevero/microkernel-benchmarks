@@ -3,7 +3,7 @@
 #include <nanvix/ulib.h>
 #include <posix/stdint.h>
 #include <kbench.h>
-#include <omp.h>
+#include <libgomp/src/omp.h>
 
 
 #define NTHREADS_MAX  (THREAD_MAX - 1) /**< Maximum Number of Working Threads      */

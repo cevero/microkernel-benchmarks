@@ -107,7 +107,7 @@ export ARFLAGS = rc
 #
 # Default image
 #
-export IMAGE ?=test-omp.img
+export IMAGE ?=buffer.img #test-omp.img
 
 # Builds everything.
 all: | make-dirs image

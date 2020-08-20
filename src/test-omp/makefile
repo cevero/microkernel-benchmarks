@@ -31,7 +31,7 @@ ifneq ($(LIBLWIP),)
 CFLAGS += -I $(INCDIR)/posix 
 endif
 
-#CFLAGS+=-fopenmp -static
+CFLAGS+=-fopenmp #-static
 # Libraries
 LIBS := -Wl,--whole-archive
 LIBS += $(LIBDIR)/$(LIBHAL) 

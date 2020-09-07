@@ -57,13 +57,13 @@ SRC += $(wildcard *.c)
 OBJ += $(SRC:.c=.$(OBJ_SUFFIX).o)
 
 # Binary File
-ELFBIN = test-omp.$(OBJ_SUFFIX)
+ELFBIN = libgomp.$(OBJ_SUFFIX)
 
 # Image Source
-IMGSRC = $(IMGDIR)/test-omp-$(TARGET).img
+IMGSRC = $(IMGDIR)/libgomp-$(TARGET).img
 
 # Image Name
-IMAGE = $(ROOTDIR)/test-omp.img
+IMAGE = $(ROOTDIR)/libgomp.img
 
 #===============================================================================
 

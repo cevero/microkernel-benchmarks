@@ -53,8 +53,8 @@ extern int omp_get_team_num(void);
 extern double omp_get_wtime(void);
 extern int omp_get_wtick(void);
 
-#include "omp-lock.h"
-#include "appsupport.h"
+//#include "omp-lock.h"
+//#include "appsupport.h"
 
 #define MAIN            _app_main
 #define PRINTF          printf

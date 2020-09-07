@@ -17,6 +17,14 @@
  * @param argc Argument counter.
  * @param argv Argument variables.
  */
+
+   void  GOMP_parallel()
+{ 
+    uprintf("reinaldo reinaldo");
+    return;
+}
+   void  GOMP_parallel_start()
+{ return;}
 void *Hello_rei(void *teste);
 
 int __main2()

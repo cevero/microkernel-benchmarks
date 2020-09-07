@@ -28,25 +28,45 @@
 
 # Builds Binary Files
 all: all-apps all-buffer all-fork-join all-kcall-local all-kcall-remote \
-		all-perf all-comm all-test-omp #all-server all-noise 
+		all-perf all-comm all-test-omp all-libgomp #all-server all-noise 
 
 # Cleans Object Files
 clean: clean-apps clean-buffer clean-fork-join clean-kcall-local clean-kcall-remote \
-		clean-comm clean-perf clean-test-omp #clean-noise  clean-server 
+		clean-comm clean-perf clean-test-omp clean-libgomp #clean-noise  clean-server 
 # Cleans Everything
 distclean: distclean-apps distclean-buffer distclean-fork-join distclean-kcall-local \
 		distclean-kcall-remote distclean-perf distclean-comm distclean-test-omp\
+		distclean-libgomp
 		#distclean-server distclean-noise 
 
 # Builds multibinary images
 image: image-apps image-buffer image-fork-join image-kcall-local image-kcall-remote \
-	   image-perf image-comm image-test-omp # image-server	image-noise
+	   image-perf image-comm image-test-omp image-libgomp# image-server	image-noise
 
 #===============================================================================
-# apps
+# libgomp
 #===============================================================================
 
-# Builds apps.
+# Builds test-omp.
+all-libgomp:
+	@$(MAKE) -C libgomp all
+
+# Cleans object files.
+clean-libgomp:
+	@$(MAKE) -C libgomp   clean
+
+# Cleans object files.
+distclean-libgomp:
+	@$(MAKE) -C libgomp  distclean
+
+# Builds multibinary image.
+image-libgomp:
+	@$(MAKE) -C libgomp image
+#===============================================================================
+# test-omp
+#===============================================================================
+
+# Builds test-omp.
 all-test-omp:
 	@$(MAKE) -C test-omp all
 
